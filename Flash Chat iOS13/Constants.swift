@@ -6,7 +6,7 @@
 //  Copyright © 2021 Angela Yu. All rights reserved.
 //
 struct K {
-    static let name = "⚡️FlashChat"
+    static let appname = "⚡️FlashChat"
     static let cellIdentifier = "ReusableCell"
     static let cellNibName = "MessageCell"
     static let registerSegue = "RegisterToChat"

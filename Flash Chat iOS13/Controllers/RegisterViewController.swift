@@ -14,7 +14,7 @@ final
 class RegisterViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = K.name
+        title = K.appname
 
     }
 

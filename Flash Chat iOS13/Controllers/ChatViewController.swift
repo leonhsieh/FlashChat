@@ -24,7 +24,7 @@ class ChatViewController: UIViewController {
         super.viewDidLoad()
 //        將dataSource設定為self，會觸發UITableViewDataSource，發送request
         tableView.dataSource = self
-        title = K.name
+        title = K.appname
         navigationItem.hidesBackButton = true//使用程式隱藏「Back」按鈕，日後方便管理，不用重拉
         
         tableView.register(UINib(nibName: K.cellNibName, bundle: nil), forCellReuseIdentifier: K.cellIdentifier)
@@ -113,7 +113,6 @@ class ChatViewController: UIViewController {
 extension ChatViewController: UITableViewDataSource {
     
     
-    //回傳訊息數量
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return messages.count
     }
@@ -129,13 +128,13 @@ extension ChatViewController: UITableViewDataSource {
     let cell = tableView.dequeueReusableCell(withIdentifier: K.cellIdentifier, for: indexPath) as! MessageCell
     cell.label.text = message.body
 
-//    Here's current user's messages
+//    Current user's messages
     if message.sender == Auth.auth().currentUser?.email{
         cell.leftImageView.isHidden = true
         cell.rightImageView.isHidden = false
         cell.messageBubble.backgroundColor = UIColor(named: K.BrandColors.lightPurple)
         cell.label.textColor = UIColor(named: K.BrandColors.purple)
-//    Here's other user's messages
+//    Other user's messages
     } else {
         cell.leftImageView.isHidden = false
         cell.rightImageView.isHidden = true
