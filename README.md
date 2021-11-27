@@ -9,8 +9,6 @@ A basic chat app with registration and login function in MVC design pattern.
   
 Using .xib file to cowork with native design components.
 
-Impelemnt .gitignore to store apikey safely.
-
 Using ```viewWillAppear``` and  ```viewDidAppear``` to have a better controll in App Lifecycle
 
 
